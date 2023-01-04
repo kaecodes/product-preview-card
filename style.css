@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
 * {
   margin: 0; 
   padding: 0; 
@@ -16,43 +18,81 @@ body {
   background-color: var(--cream);
 }
 
-.card-container {
-  background-color: var(--white);
-  width: 40%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed; 
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%); 
-  border-radius: 15px;
+.card-container .description p span.current-price {
+  font-family: 'Fraunces', serif;
 }
 
-.left-column {
-  width: 50%;
+.card-container .description .fragrance, .card-container .description .brand-desc, 
+.card-container .description p span.previous-price, button  {
+  font-family: 'Montserrat', sans-serif;
 }
 
-.left-column img {
-  width: 100%; 
-  display: block;
-  border-radius: 15px 0 0 15px;
-}
+/* MOBILE FIRST  */
+@media (max-width: 375px) {
+  .desktop-img {
+    display: none;
+  }
 
-.right-column {
-  width: 50%;
-  padding: 25px; 
-}
+  .card-container {
+    width: 90%;  
+    height: 90vh;
+    background-color: var(--white); 
+    margin: 10% auto;
+    border-radius: 15px; 
+  }
 
-.attribution { 
-  font-size: 11px; 
-  text-align: center; 
-  position: fixed; 
-  bottom: 0; 
-  left: 50%; 
-  transform: translate(-50%);
-}
+  .card-container .image .mobile-img {
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+  }
 
-.attribution a { 
-  color: hsl(228, 45%, 44%); 
+  .card-container .description {
+    width: 100%; 
+    padding: 25px; 
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; 
+  }
+
+  .card-container .description .fragrance {
+    color: var(--dark-grayish-blue); 
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+  }
+  
+  h1 {
+    font-size: 2.2rem; 
+  }
+
+  .fragrance {
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .brand-desc {
+    color: var(--dark-grayish-blue); 
+    font-size: 14px;
+  }
+
+  .card-container .description p span.current-price {
+    font-size: 2rem;
+    color: var(--dark-cyan)
+  }
+
+  .card-container .description p span.previous-price {
+    color: var(--dark-grayish-blue); 
+    margin-left: 2rem; 
+    vertical-align: super;
+    text-decoration: line-through;
+  }
+
+  button {
+    background-color: var(--dark-cyan);
+    color: var(--white); 
+    font-size: 1rem;
+    padding: 15px 30px; 
+    border: none; 
+    outline: none; 
+    border-radius: 10px;
+  }
 }
